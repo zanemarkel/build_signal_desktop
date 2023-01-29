@@ -15,7 +15,11 @@ install:
 	@-pkill --signal SIGHUP -x signal-desktop >/dev/null 2>/dev/null && sleep 2
 	@-pkill --signal SIGKILL -x signal-desktop >/dev/null 2>/dev/null
 	@sudo rpm -Uvh --force output/signal-desktop-$(SIGNAL_VERSION).x86_64.rpm
-	@sudo sed -i 's|Exec=/opt/Signal/signal-desktop.*|Exec=/opt/Signal/signal-desktop --use-tray-icon %U|g' /usr/share/applications/signal-desktop.desktop
+# Use flags that get wayland working properly
+# which unfortunately includes --no-sandbox
+	@sudo sed -i 's|Exec=/opt/Signal/signal-desktop.*|Exec=/opt/Signal/signal-desktop --no-sandbox --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto %U|g' /usr/share/applications/signal-desktop.desktop
+# this fixes the otherwise missing icon
+	@sudo sed -i 's|StartupWMClass=Signal|StartupWMClass=signal|g' /usr/share/applications/signal-desktop.desktop
 
 clean:
 	@podman unshare rm -rf ./output
