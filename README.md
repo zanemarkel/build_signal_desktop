@@ -5,7 +5,7 @@ A Dockerfile to build [Signal-Desktop](https://github.com/signalapp/Signal-Deskt
 Last versions (can be configured) :
 
 - Fedora 37
-- Signal-Desktop v6.5.1
+- Signal-Desktop v6.6.0
 
 ## Usage
 
@@ -26,6 +26,6 @@ Current supported Fedora version is 37, but you can change the version in `FEDOR
 
 ## Credits
 
-Thanks to [yea-hung](https://github.com/signalapp/Signal-Desktop/issues/4530#issuecomment-1079834967) and [michelamarie](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora).
+Thanks to [yea-hung](https://github.com/signalapp/Signal-Desktop/issues/4530#issuecomment-1079834967), [michelamarie](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora), and [BarbossHack](https://github.com/BarbossHack/Signal-Desktop-Fedora).
 
 [Signal-Desktop](https://github.com/signalapp/Signal-Desktop)
