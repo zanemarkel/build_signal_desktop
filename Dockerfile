@@ -4,10 +4,15 @@ FROM docker.io/fedora:${FEDORA_VERSION}
 RUN dnf update -y && \
     dnf install -y unzip g++ npm python make gcc git rpm-build libxcrypt-compat patch
 
-# Install git-lfs
+# Install git-lfs and pip packaging
+# python3-pip and packaging were added because Fedora 39 moves to python 3.12,
+# which deprecates distutils used by node-gyp
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash && \
     dnf install -y git-lfs && \
-    git lfs install
+    git lfs install && \
+    dnf install -y python3-pip && \
+    pip install packaging && \
+    dnf clean all
 
 ARG NVM_VERSION
 ARG SIGNAL_VERSION

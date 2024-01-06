@@ -1,11 +1,11 @@
 # Signal-Desktop-Fedora
 
-A Dockerfile to build [Signal-Desktop](https://github.com/signalapp/Signal-Desktop) RPM package for Fedora !
+A Dockerfile to build [Signal-Desktop](https://github.com/signalapp/Signal-Desktop) RPM package for Fedora!
 
-Last versions (can be configured) :
+Latest supported versions (can be configured):
 
-- Fedora 38
-- Signal-Desktop v6.42.0
+- Fedora 39
+- Signal-Desktop v6.43.0
 
 ## Usage
 
@@ -22,10 +22,9 @@ It should be a valid `tag` from <https://github.com/signalapp/Signal-Desktop/tag
 
 ## Fedora version
 
-Current supported Fedora version is 37, but you can change the version in `FEDORA_VERSION` file.
+Current supported Fedora version is 39, but you can change the version in `FEDORA_VERSION` file.
 
 ## Credits
 
-Thanks to [yea-hung](https://github.com/signalapp/Signal-Desktop/issues/4530#issuecomment-1079834967), [michelamarie](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora), and [BarbossHack](https://github.com/BarbossHack/Signal-Desktop-Fedora).
+Thanks to the Signal team, [yea-hung](https://github.com/signalapp/Signal-Desktop/issues/4530#issuecomment-1079834967), [michelamarie](https://github.com/michelamarie/fedora-signal/wiki/How-to-compile-Signal-Desktop-for-Fedora), and [BarbossHack](https://github.com/BarbossHack/Signal-Desktop-Fedora).
 
-[Signal-Desktop](https://github.com/signalapp/Signal-Desktop)
