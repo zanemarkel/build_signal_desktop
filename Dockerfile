@@ -35,7 +35,7 @@ RUN cd /root && \
 RUN cd /root/Signal-Desktop && \
     source /root/.nvm/nvm.sh --no-use && \
     nvm use && \
-    yarn install --frozen-lockfileyarn && \
+    (yarn install --frozen-lockfile || yarn install --frozen-lockfile) && \
     yarn generate && \
     yarn build-release
 
