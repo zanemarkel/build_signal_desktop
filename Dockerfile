@@ -22,10 +22,13 @@ RUN cd /root && \
 RUN cd /root/Signal-Desktop && \
     source $NVM_DIR/nvm.sh --no-use && \
     nvm install $(curl -o- https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${SIGNAL_VERSION}/.nvmrc) && \
-    nvm use && \
-    npm install && \
-    npm run generate && \
-    npm run build
+    nvm use
+
+RUN npm install -g pnpm
+RUN cd /root/Signal-Desktop && \
+    pnpm install && \
+    pnpm run generate && \
+    pnpm run build
 
 # Export rpm and clean
 RUN mkdir -p /output && \
